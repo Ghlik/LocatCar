@@ -47,7 +47,7 @@ public class VeiculoController {
             modelAndView.addObject("tipoVeiculo", TipoVeiculo.values());
             return modelAndView;
         } else {
-            Veiculo veiculo = veiculoDTO.toVeiculo();
+            Veiculo veiculo = veiculoDTO.paraVeiculo();
             this.veiculoService.createVeiculo(veiculo);
 
             return new ModelAndView("redirect:/veiculos");
@@ -94,7 +94,7 @@ public class VeiculoController {
         } else {
             Optional<Veiculo> optional = this.veiculoService.buscarVeiculoPorId(id);
             if (optional.isPresent()) {
-                Veiculo veiculo = veiculoDTO.toVeiculo(optional.get());
+                Veiculo veiculo = veiculoDTO.paraVeiculo(optional.get());
                 this.veiculoService.createVeiculo(veiculo);
                 return new ModelAndView("redirect:/veiculos/" + veiculo.getId());
             } else {

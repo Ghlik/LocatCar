@@ -23,7 +23,7 @@ public class ClienteDTO {
     @NotNull
     private String email;
 
-    public Cliente toCliente() {
+    public Cliente paraCliente() {
         Cliente cliente = new Cliente();
 
         cliente.setNome(this.nome);
@@ -34,7 +34,7 @@ public class ClienteDTO {
         return cliente;
     }
 
-    public Cliente toCliente(Cliente cliente) {
+    public Cliente paraCliente(Cliente cliente) {
         cliente.setNome(this.nome);
         cliente.setTipoPessoa(this.tipoPessoa);
         cliente.setDocumento(this.documento);

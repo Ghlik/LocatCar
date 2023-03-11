@@ -46,7 +46,7 @@ public class ClienteController {
             modelAndView.addObject("tipoPessoa", TipoPessoa.values());
             return modelAndView;
         } else {
-            Cliente cliente = clienteDTO.toCliente();
+            Cliente cliente = clienteDTO.paraCliente();
             this.clienteService.createCliente(cliente);
 
             return new ModelAndView("redirect:/clientes");
@@ -94,7 +94,7 @@ public class ClienteController {
         } else {
             Optional<Cliente> optional = this.clienteService.buscarClientePorId(id);
             if (optional.isPresent()) {
-                Cliente cliente = clienteDTO.toCliente(optional.get());
+                Cliente cliente = clienteDTO.paraCliente(optional.get());
                 this.clienteService.createCliente(cliente);
                 return new ModelAndView("redirect:/clientes/" + cliente.getId());
 

@@ -27,7 +27,7 @@ public class VeiculoDTO {
     private String modelo;
     private TipoVeiculo tipoVeiculo;
     private Boolean disponivel;
-    public Veiculo toVeiculo() {
+    public Veiculo paraVeiculo() {
         Veiculo veiculo = new Veiculo();
         veiculo.setPlaca(this.placa);
         veiculo.setMarca(this.marca);
@@ -37,7 +37,7 @@ public class VeiculoDTO {
         return veiculo;
     }
 
-    public Veiculo toVeiculo(Veiculo veiculo) {
+    public Veiculo paraVeiculo(Veiculo veiculo) {
 
         veiculo.setPlaca(this.placa);
         veiculo.setMarca(this.marca);
